@@ -7,10 +7,10 @@ Then we can have each card link to a youtube video for the recipe and a recipe p
 
 ## User Story
 As a hungry person i want look recipes i like and others in the coding class may like
--I want cards to show pre defined recipes 1 of each for each person in project
+- I want cards to show pre defined recipes 1 of each for each person in project
 
 As a user i want to be able to click on each card
--Each card shows me recipes from pinterest and a youtube video showing instructions
+- Each card shows me recipes from pinterest and a youtube video showing instructions
 
 As a users i want to be able to have a recipe collection log
 - can save the knowledge i learned from my video and recipe that will print to local memory.
