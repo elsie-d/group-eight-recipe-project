@@ -9,18 +9,29 @@
 </head>
 <body>
 
-<div class="section">
+<div class="tile is-ancestor">
 <!--Start Container 1-->
-<div class="container">
-  <div class="column is-8">
-    <p class="bd-notification is-primary">First column</p>
-  </div>
-  <div class="container">
-    <p class="bd-notification is-primary">Second column with more content. This is so you can see the vertical alignment.</p>
-  </div>
+<div class="tile is-parent" id="container-1">
+  <article class="tile is-child notification is-danger">
+    <p class="title">Container 1</p>
+    <p class="subtitle">Aligned with the right tile</p>
+    <div class="content">
+      <!-- Content -->
+    </div>
+  </article>
 </div>
-<!--End Container 2-->
 
+<!--End Container 2-->
+<div class="tile is-parent" id="container-2">
+  <article class="tile is-child notification is-danger">
+    <p class="title">Container 2</p>
+    <p class="subtitle">Aligned with the right tile</p>
+    <div class="content">
+      <!-- Content -->
+    </div>
+  </article>
+</div>
+</div>
 
 </div>
 
