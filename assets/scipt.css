@@ -2,4 +2,18 @@
     width: 50%;
     margin-left: 50%;
     border-style: double;
+    border-radius: 1%;
+    border-color: black;
+}
+
+.card-content {
+    border-style: inset;
+    border-color: crimson;
+    border-radius: 15%;
+}
+.card-styles {
+    border-style: groove;
+    border-color: black;
+    padding: 5px;
+ 
 }
