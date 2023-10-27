@@ -3,22 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory-Secrets</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    <title>Savory Secrets</title>
+    <script src="https://kit.fontawesome.com/14b5cefaaf.js" crossorigin="anonymous"></script>
 </head>
 <!----Ben's header and Nav Bar-->
-<h1 class="title">Savory Secrets</h1>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <i class="fa-solid fa-utensils"></i>
+        <h1>Savory-Secrets</h1>
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Home
+        </a>
+  
+        <a class="navbar-item">
+          Breakfast
+        </a>
+        <a class="navbar-item">
+          Lunch
+        </a>
+        <a class="navbar-item">
+          Dinner
+        </a>
+  
+    </div>
+  </nav>
+<!-- <h1 class="title">Savory Secrets</h1>
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
+    
     <div class="navbar-brand">
         <li><a href="#Breakfast">Breakfast</a></li>
         <li><a href="#Lunch">Lunch</a></li>
         <li><a href="#Dinner">Dinner</a></li>
         <li><a href="#Desert">Desert</a></li>
     </div>
-  <nav>
+  <nav> -->
         
 <body>
-    
+
+<!--Start Seach Bar-->
+    <div id="search-bar">
+    <input class="input is-normal" type="text" placeholder="Search"><br/>
+    <button class="button" id="search">Search</button>
+    </div>    
+<!--End Search Bar-->    
+   
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          </p>
+        </div>
+      </footer>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/script.js"></script>
+
+
 </body>
 </html>
