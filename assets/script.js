@@ -22,6 +22,7 @@ async function searchRecipes() {
 //     }
 // })
 
+//API Key for YouTube Data API --AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g
 
 $(document).ready(function() {
     $(".editBtn").on("click", function() {
