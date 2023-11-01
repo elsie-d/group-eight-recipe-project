@@ -257,16 +257,10 @@ window.addEventListener('load', displaySavedRecipes);
       $(this).val(savedValue);
     }
   });
-});
 
 
-//   <script src="https://apis.google.com/js/api.js"></script>
-//   <script>
-//     /**
-//      * Sample JavaScript code for youtube.channels.list
-//      * See instructions for running APIs Explorer code samples locally:
-//      * https://developers.google.com/explorer-help/code-samples#javascript
-//      */
+
+
 
   
 function authenticate() {
@@ -298,128 +292,12 @@ function execute() {
             function(err) { console.error("Execute error", err); });
 }
 
-//     gapi.load("client:auth2", function() {
-//       gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
-//     });
-// //   </script>
-// //   <button onclick="authenticate().then(loadClient)">authorize and load</button>
-// //   <button onclick="execute()">execute</button>
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchValue}&type=video&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g`)
+    .then(res =>{
+      return res.json();
+    })
+    .then(data=>{
+      data.items.forEach((curr)=>{
+        console.log(curr)
+      })
+    })
