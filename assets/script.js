@@ -261,7 +261,6 @@ window.addEventListener('load', displaySavedRecipes);
 
 
 
-
   
 function authenticate() {
   return gapi.auth2.getAuthInstance()
@@ -292,7 +291,9 @@ function execute() {
             function(err) { console.error("Execute error", err); });
 }
 
+
 fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchValue}&type=video&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g`)
+
     .then(res =>{
       return res.json();
     })
