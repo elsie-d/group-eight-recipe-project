@@ -30,7 +30,7 @@ searchButton.addEventListener("click", searchRecipes)
 
 
 
-
+//API KEY for EDAMAM--90aaa4d2875a09ca3d7df6d0944c9096
 
 //API Key for YouTube Data API --AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g
 
@@ -87,6 +87,7 @@ function execute() {
     },
       function (err) { console.error("Execute error", err); });
 }
+
 //     gapi.load("client:auth2", function() {
 //       gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
 //     });
