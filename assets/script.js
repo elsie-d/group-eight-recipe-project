@@ -241,9 +241,7 @@ window.addEventListener('load', displaySavedRecipes);
 //API Key for YouTube Data API --AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g
 //2nd API key for Youtube Data API without restrictions-- AIzaSyCJyk_a9TL9uuWCXT4vZuZ4krxovy3kh0Q
 
-
  
-  
 function authenticate() {
   return gapi.auth2.getAuthInstance()
       .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
