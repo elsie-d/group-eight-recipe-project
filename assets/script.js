@@ -6,9 +6,14 @@ const searchInput = document.querySelector('#search-input');
 const resultsList = document.querySelector('#results');
 const searchButton = document.querySelector("#search");
 
+
+// const ytPlaylistID = 'UUNbngWUqL2eqRw12yAwcICg'
+
+
 async function searchRecipes() {
   const searchValue = searchInput.value.trim();
   const response = await fetch(`https://api.edamam.com/search?q=${searchValue}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096&from=0&to=10`);
+  const response = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUNbngWUqL2eqRw12yAwcICg&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g`);
   const data = await response.json();
   console.log(data)
   // displayRecipes(data.hits)
