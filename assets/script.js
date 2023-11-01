@@ -260,13 +260,7 @@ window.addEventListener('load', displaySavedRecipes);
 });
 
 
-//   <script src="https://apis.google.com/js/api.js"></script>
-//   <script>
-//     /**
-//      * Sample JavaScript code for youtube.channels.list
-//      * See instructions for running APIs Explorer code samples locally:
-//      * https://developers.google.com/explorer-help/code-samples#javascript
-//      */
+
 
   
 function authenticate() {
@@ -298,12 +292,16 @@ function execute() {
             function(err) { console.error("Execute error", err); });
 }
 
-//     gapi.load("client:auth2", function() {
-//       gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
-//     });
-// //   </script>
-// //   <button onclick="authenticate().then(loadClient)">authorize and load</button>
-// //   <button onclick="execute()">execute</button>
+fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUNbngWUqL2eqRw12yAwcICg&key=AIzaSyCJyk_a9TL9uuWCXT4vZuZ4krxovy3kh0Q')
+    .then(res =>{
+      return res.json();
+    })
+    .then(data=>{
+      data.items.forEach((curr)=>{
+        console.log(curr)
+      })
+    })
+
 
     
 
