@@ -1,5 +1,3 @@
-var saveBtn = document.querySelector('.saveBtn');
-var editBtn = document.querySelector('.editBtn');
 var searchForm = document.querySelector('#search-form');
 var searchInput = document.querySelector('#search-query');
 var resultsList = document.querySelector('#results');
@@ -50,6 +48,10 @@ function generatePlaceholderRecipe() {
 
   return placeholderRecipe;
 }
+
+searchButton.addEventListener("click", searchRecipes)
+
+
 
 function displayPlaceholderRecipe() {
   var placeholderRecipe = generatePlaceholderRecipe();
@@ -114,6 +116,7 @@ function displayRecipes(hits) {
 
     var image = document.createElement('img');
     image.src = recipe.image;
+
 
     figure.appendChild(image);
     cardImage.appendChild(figure);
@@ -239,7 +242,24 @@ window.addEventListener('load', displaySavedRecipes);
 
 
 
-        
+  $(".saveBtn").on("click", function () {
+    var parent = $(this).parent().parent()
+    var inputValue = parent.html()
+    var key = parent.attr("id");
+    localStorage.setItem(key, inputValue);
+    console.log(localStorage.getItem(key));
+  });
+
+  $("textarea").each(function () {
+    var key = $(this).parent().attr("id");
+    var savedValue = localStorage.getItem(key);
+    if (savedValue) {
+      $(this).val(savedValue);
+    }
+  });
+});
+
+
 //   <script src="https://apis.google.com/js/api.js"></script>
 //   <script>
 //     /**
@@ -247,22 +267,30 @@ window.addEventListener('load', displaySavedRecipes);
 //      * See instructions for running APIs Explorer code samples locally:
 //      * https://developers.google.com/explorer-help/code-samples#javascript
 //      */
+
   
 function authenticate() {
   return gapi.auth2.getAuthInstance()
       .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
       .then(function() { console.log("Sign-in successful"); },
             function(err) { console.error("Error signing in", err); });
+
+
+
+
 }
 function loadClient() {
   gapi.client.setApiKey("AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g");
   return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+
       .then(function() { console.log("GAPI client loaded for API"); },
             function(err) { console.error("Error loading GAPI client for API", err); });
+
 }
 // Make sure the client is loaded and sign-in is complete before calling this method.
 function execute() {
   return gapi.client.youtube.channels.list({})
+
       .then(function(response) {
               // Handle the results here (response.result has the parsed body).
               console.log("Response", response);
@@ -270,13 +298,13 @@ function execute() {
             function(err) { console.error("Execute error", err); });
 }
 
-
 //     gapi.load("client:auth2", function() {
 //       gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
 //     });
 // //   </script>
 // //   <button onclick="authenticate().then(loadClient)">authorize and load</button>
 // //   <button onclick="execute()">execute</button>
+
     
 
     
