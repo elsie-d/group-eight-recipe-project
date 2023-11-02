@@ -52,7 +52,6 @@ a {
 }
 
 .container-1 {
-    /* min-height: 70vh; */
     position: relative;
     height: fit-content;
 }
@@ -101,6 +100,7 @@ a {
     border-color: black;
     padding-right: 1%;
 }
+
 
 .card-content {
     border-style: inset;
