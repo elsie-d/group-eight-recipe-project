@@ -48,155 +48,17 @@
 
 <body>
 
-  <!--Start Seach Bar-->
-  <div id="search-bar">
-    <input id="search-input" class="input is-normal" type="text" placeholder="Search"><br />
-    <button class="button" id="search">Search</button>
-  </div>
-  <!--End Search Bar-->
+  <main>
+    <h1>Savory-Secrets</h1>
 
-  <div class="columns">
-    <div class="container-1 is-three-fifths p-6">
-      <img src="assets/chicken-wings-barbecue.jpeg" alt="Primary Image" class="image is-fullwidth">
-      <div class="intro is-flex is-justify-content-center is-align-items-center">
-        <div class="intro-content p-3 has-background-light">
-          <div class="border p-2">
-            <h1 class="title">Savory Secrets</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure autem, unde, minus tempore,
-              accusamus illum velit repellendus aliquam doloribus aut aliquid provident laborum nam. Itaque
-              eum velit quam omnis esse?.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  <div class="container-2 column">
-    <div class="card-1">
-      <header class="card-header">
-        <p class="card-header-title">
-          Recipe's
-        </p>
-        <button class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </header>
-      <div class="card-content">
-        <div class="content">
-         
-          
-          <br>
-          
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item saveBtn">Save</a>
-        <a href="#" class="card-footer-item editBtn">Edit</a>
-      </footer>
-      <div class="card-2">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            
-            
-            <br>
-            
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
+    <form id="search-form">
+      <label for="search-query">Recipe Search:</label>
+      <input type="text" id="search-query" name="q" required>
+      <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
+  </main>
 
-        </footer>
-      </div>
-      <div class="card-3">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-          
-            
-            <br>
-            
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
-
-        </footer>
-      </div>
-      <div class="card-4">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-        
-            
-            <br>
-            
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
-
-        </footer>
-      </div>
-      <div class="card">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            
-            
-            <br>
-            
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
-
-        </footer>
-      </div>
-    </div>
-  </div>
-</div>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
@@ -206,12 +68,39 @@
       </p>
     </div>
   </footer>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script src="./assets/script.js"></script>
-  
-
 
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
