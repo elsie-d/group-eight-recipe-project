@@ -33,13 +33,12 @@
     gap: 10px;
 }
   .container-2 {
- .container-2 {
     width: 50%;
     border-style: double;
     border-radius: 1%;
     border-color: black;
 }  
-} 
+
 
 .card-content {
     border-style: inset;
