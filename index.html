@@ -2,61 +2,78 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Savory-Secrets</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Eater&family=Gabarito&family=Montserrat:wght@100&family=Roboto:wght@100&family=Yanone+Kaffeesatz:wght@200&display=swap"
+    rel="stylesheet">
   <script src="https://kit.fontawesome.com/14b5cefaaf.js" crossorigin="anonymous"></script>
-</head>
-<!----Ben's header and Nav Bar-->
-<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <i class="fa-solid fa-utensils"></i>
-      <h1 class="title is-3 has-text-weight-bold p-4">Savory-Secrets</h1>
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Home
-      </a>
-
-      <a class="navbar-item">
-        Breakfast
-      </a>
-      <a class="navbar-item">
-        Lunch
-      </a>
-      <a class="navbar-item">
-        Dinner
-      </a>
-
-    </div>
-</nav>
-
 </head>
 
 <body>
-
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <i class="fa-solid fa-utensils"></i>
+        <h1 class="title is-3 has-text-weight-bold p-4">Savory-Secrets</h1>
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Home
+        </a>
+  
+        <a class="navbar-item">
+          Breakfast
+        </a>
+        <a class="navbar-item">
+          Lunch
+        </a>
+        <a class="navbar-item">
+          Dinner
+        </a>
+  
+      </div>
+  </nav>
+  
   <main>
-    <h1>Savory-Secrets</h1>
-
     <form id="search-form">
-      <label for="search-query">Recipe Search:</label>
+      <label id="input" for="search-query">Recipe Search:</label>
       <input type="text" id="search-query" name="q" required>
-      <button type="submit">Search</button>
+      <button id="search-button" type="submit">Search</button>
     </form>
-    <div id="results"></div>
+
+
+    <div class="columns">
+      <div class="container-1 is-three-fifths p-6">
+        <img src="assets/chicken-wings-barbecue.jpeg" alt="Primary Image" class="image is-fullwidth">
+        <div class="intro is-flex is-justify-content-center is-align-items-center">
+          <div class="intro-content p-3 has-background-light">
+            <div class="border p-2">
+              <h1 class="title">Savory Secrets</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure autem, unde, minus tempore,
+                accusamus illum velit repellendus aliquam doloribus aut aliquid provident laborum nam. Itaque
+                eum velit quam omnis esse?.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="results" class="column"></div>
+    </div>
   </main>
 
   <footer class="footer">
@@ -74,33 +91,5 @@
   <script src="./assets/script.js"></script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

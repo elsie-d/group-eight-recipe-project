@@ -25,7 +25,7 @@ searchForm.addEventListener('submit', async (event) => {
     console.error('Error:', error);
 
   }
-});
+});  
 
 function generatePlaceholderRecipe() {
   var placeholderRecipe = {
@@ -241,7 +241,30 @@ window.addEventListener('load', displaySavedRecipes);
 //API Key for YouTube Data API --AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g
 //2nd API key for Youtube Data API without restrictions-- AIzaSyCJyk_a9TL9uuWCXT4vZuZ4krxovy3kh0Q
 
- 
+
+
+
+  $(".saveBtn").on("click", function () {
+    var parent = $(this).parent().parent()
+    var inputValue = parent.html()
+    var key = parent.attr("id");
+    localStorage.setItem(key, inputValue);
+    console.log(localStorage.getItem(key));
+  });
+
+  $("textarea").each(function () {
+    var key = $(this).parent().attr("id");
+    var savedValue = localStorage.getItem(key);
+    if (savedValue) {
+      $(this).val(savedValue);
+    }
+  });
+
+
+
+
+  
+
 function authenticate() {
   return gapi.auth2.getAuthInstance()
       .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
@@ -271,7 +294,9 @@ function execute() {
             function(err) { console.error("Execute error", err); });
 }
 
-fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUNbngWUqL2eqRw12yAwcICg&key=AIzaSyCJyk_a9TL9uuWCXT4vZuZ4krxovy3kh0Q')
+
+fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchValue}&type=video&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g`)
+
     .then(res =>{
       return res.json();
     })
@@ -280,123 +305,3 @@ fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&play
         console.log(curr)
       })
     })
-
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
