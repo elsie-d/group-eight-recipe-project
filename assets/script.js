@@ -25,7 +25,7 @@ searchForm.addEventListener('submit', async (event) => {
     console.error('Error:', error);
 
   }
-});
+});  
 
 function generatePlaceholderRecipe() {
   var placeholderRecipe = {
