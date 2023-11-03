@@ -220,3 +220,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+//loads EDAMAM strictly for Breakfest
+//https://api.edamam.com/api/recipes/v2?type=public&app_id=string&app_key=90aaa4d2875a09ca3d7df6d0944c9096&mealType=Breakfast
+
+//loads EDAMAM stricyly for Lunch
+//https://api.edamam.com/api/recipes/v2?type=public&app_id=string&app_key=90aaa4d2875a09ca3d7df6d0944c9096&mealType=Lunch
+
+//loads EDAMAM stricyly for Dinner
+//https://api.edamam.com/api/recipes/v2?type=public&app_id=string&app_key=90aaa4d2875a09ca3d7df6d0944c9096&mealType=Dinner
