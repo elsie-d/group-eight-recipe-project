@@ -43,6 +43,7 @@ fetch(ytAPIURL)
         var card = document.createElement('div');
         card.classList.add('card')
         card.innerHTML = `
+        <div class="card card-styles">
         <header class="card-header">
         <p class="card-header-title">
          ${items.snippet.title}
@@ -67,6 +68,8 @@ fetch(ytAPIURL)
         
         
       </footer>
+
+      </div>
         `  
         document.getElementById('right').appendChild(card)
 
