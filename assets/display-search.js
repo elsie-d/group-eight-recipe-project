@@ -15,7 +15,7 @@ var searchTerm = urlParam.get('q')
 
 window.addEventListener("load", (event) => {
     event.preventDefault();
-
+    videosLoad();
 
     console.log("page is fully loaded");
 
@@ -26,6 +26,8 @@ window.addEventListener("load", (event) => {
 
 
 /// YOUTUBE API FETCHING
+
+function videosLoad() {
 fetch(ytAPIURL)
 .then (function (response){
     return response.json();
@@ -66,11 +68,11 @@ fetch(ytAPIURL)
         
       </footer>
         `  
-        document.getElementById('videos').appendChild(card)
+        document.getElementById('right').appendChild(card)
 
     })
     
-})
+})}
 
 // FETCH EDAMAM
 fetch(foodAPIurl)
