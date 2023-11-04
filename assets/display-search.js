@@ -12,6 +12,7 @@ var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchT
 
 //back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q
 
+
 // EVENT LISTENER    <--- on load for now, until we connect functionality from index 
 
 window.addEventListener("load", (event) => {
@@ -198,26 +199,35 @@ function displayRecipes(hits) {
   container.appendChild(cardContainer);
 }
 
+//nav bar functionality
+document.addEventListener('DOMContentLoaded', () => {
 
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-// function displaySavedRecipes() {
-//   var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
 
-//   savedRecipes.forEach(function (savedRecipe) {
-//     var card = document.createElement('div');
-//     card.classList.add('card');
-//     resultsList.appendChild(card);
-//   });
-// }
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
 
-// window.addEventListener('DOMContentLoaded', function () {
-//   console.log('this code ran')
-//   var data = JSON.parse(localStorage.getItem('recipesData'));
-//   displayRecipes(data.hits);
-  
-// });
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
 
-// if (window.location.pathname === '/Page2.html') {
-//   window.addEventListener('load', displaySavedRecipes);
+    });
+  });
 
-// }
+});
+
+document.addEventListener(click)
+//loads EDAMAM strictly for Breakfest
+//https://api.edamam.com/api/recipes/v2?type=public&app_id=string&app_key=90aaa4d2875a09ca3d7df6d0944c9096&mealType=Breakfast
+
+//loads EDAMAM stricyly for Lunch
+//https://api.edamam.com/api/recipes/v2?type=public&app_id=string&app_key=90aaa4d2875a09ca3d7df6d0944c9096&mealType=Lunch
+
+//loads EDAMAM stricyly for Dinner
+//https://api.edamam.com/api/recipes/v2?type=public&app_id=string&app_key=90aaa4d2875a09ca3d7df6d0944c9096&mealType=Dinner
