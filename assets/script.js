@@ -105,7 +105,7 @@ function displayRecipes(recipesData) {
     cardContainer.appendChild(card);
   });
 
-  container.appendChild(cardContainer);
+//   container.appendChild(cardContainer);
 }
 
 // function displaySavedRecipes() {
@@ -259,17 +259,17 @@ if (window.location.pathname.includes('/index.html')) {
 }
 
 
-// window.addEventListener('DOMContentLoaded', function () {
-//   console.log('this code ran')
-//   var data = JSON.parse(localStorage.getItem('recipesData'));
-//   displayRecipes(data.hits);
+window.addEventListener('DOMContentLoaded', function () {
+  console.log('this code ran')
+  var data = JSON.parse(localStorage.getItem('recipesData'));
+  displayRecipes(data.hits);
 
-// });
+});
 
-// if (window.location.pathname === '/Page2.html') {
-//   window.addEventListener('load', displaySavedRecipes);
+if (window.location.pathname === '/Page2.html') {
+  window.addEventListener('load', displaySavedRecipes);
 
-// }
+}
 
 
 
@@ -345,4 +345,3 @@ function execute() {
 //       data.items.forEach((curr)=>{
 //         console.log(curr)
 //       })
-//     })
