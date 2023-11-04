@@ -1,17 +1,14 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-body {
-    background-color: papayawhip;
-   
-}
-
-main {
-    margin-left: 11%;
-}
+/* body {
+    background-color: #00d1b2;
+} */
 
 #search-form,
+.card-content,
 h1,
-a {
+a,
+p {
     font-family: 'Eater', serif;
     font-family: 'Gabarito', sans-serif;
     font-family: 'Montserrat', sans-serif;
@@ -19,38 +16,35 @@ a {
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-#nav-menu{
+#nav-menu {
+    background-color: #EFE2CD;
     position: fixed;
     width: 100%;
-    top: 0;
-    height: 20%;
 }
+
 a {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 }
 
-
-
 #search-form {
-    display: flex;
-    align-items: center;
-    background-color: #00d1b2;
     color: black;
     border: 2px solid;
     border-radius: 10px;
     padding: 5px 10px;
     width: 400px;
-    margin-left: 13%;
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-right: 2%;
+    margin-bottom: 1%;
 }
 
 #input {
     font-size: 20px;
     font-weight: bold;
     padding: 1%;
-    margin-left: 2%
+    margin-left: 10px;
+
 }
 
 #search-button {
@@ -65,10 +59,27 @@ a {
 
 }
 
-.container-1 {
+.columns {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .container-1 {
     position: relative;
     height: fit-content;
-    width: 50%;
+    width: 100%;
+} */
+
+.container-1 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;;
 }
 
 .intro {
@@ -76,25 +87,37 @@ a {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 65%;
     /* opacity: 0; */
 }
 
 .intro-content {
-    opacity: 1;
+    opacity: 0.8;
     width: 50%;
     height: fit-content;
 }
 
+.title {
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+p{
+    font-weight: bold;
+    font-size: 30px;
+}
 .border {
     border: 2px solid gold;
 
 }
 
+
 .column {
+    display: flex;
+    flex-direction: row;
     margin: 20px 0;
-    margin-right: 10%;
-    margin-left: 5%;
 }
 
 #columnsP2 {
@@ -105,36 +128,55 @@ a {
 .container-2 {
     margin-left: 10%;
     margin-top: 2%;
+    display: flex;
 }
 
 #results {
-    width: 10%;
+    width: 200%;
     border-style: double;
     border-radius: 13px;
     border-color: #00d1b2;
-    padding-right: 12px;
     margin-top: 43px;
-    max-width: 500px;
+    display: flex;
+    margin-bottom: 3%;
+    margin-left: 10%;
+
 }
 
+.card {
+    width: 385px;
+    height: 185px;
+    padding: 20px;
+    padding-bottom: 12%;
+}
 
+.row {
+    flex-direction: row;
+}
 
 .card-content {
+    /* flex: 1;
+    border-style: inset;
+    border-color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 25%;
+    max-width: 500px; */
     border-style: inset;
     border-color: black;
     margin-bottom: 20px;
     padding: 10px;
     text-align: center;
-    width: 100%;
-    height: 100%;
+    /*height: 100%; */
+    height: 200px;
+    overflow-y:auto;
+    margin-bottom: 20px;
 }
 
 .card-styles {
     border-style: groove;
     border-color: black;
     padding: 5px;
-    
-
 }
 
 div iframe {
