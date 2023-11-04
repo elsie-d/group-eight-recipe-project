@@ -1,15 +1,16 @@
-//APIs
 
-var ytAPIURL =  'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=cookchicken&type=video&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g' //replace chicken w/ search token query
-var  foodAPIurl = 'https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096' // also replace chicken :) 
 
 // QUERY PARAMS
 var queryString = window.location.search;
 var urlParam = new URLSearchParams(queryString);
 var searchTerm = urlParam.get('q')
 
+//APIs
 
+var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=cook${searchTerm}&type=video&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g` //replace chicken w/ search token query
+var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096` // also replace chicken :) 
 
+//back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q
 
 // EVENT LISTENER    <--- on load for now, until we connect functionality from index 
 
