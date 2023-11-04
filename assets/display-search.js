@@ -198,3 +198,25 @@ function displayRecipes(hits) {
 }
 
 
+
+// function displaySavedRecipes() {
+//   var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+
+//   savedRecipes.forEach(function (savedRecipe) {
+//     var card = document.createElement('div');
+//     card.classList.add('card');
+//     resultsList.appendChild(card);
+//   });
+// }
+
+// window.addEventListener('DOMContentLoaded', function () {
+//   console.log('this code ran')
+//   var data = JSON.parse(localStorage.getItem('recipesData'));
+//   displayRecipes(data.hits);
+  
+// });
+
+// if (window.location.pathname === '/Page2.html') {
+//   window.addEventListener('load', displaySavedRecipes);
+
+// }
