@@ -1,6 +1,7 @@
 var searchForm = document.querySelector('#search-form');
 var searchInput = document.querySelector('#search-query');
 var resultsList = document.querySelector('#results');
+// var searchButton = document.querySelector('.search-btn');
 var saveBtn = document.createElement('button');
 
 searchForm.addEventListener('submit', async (event) => {
@@ -107,15 +108,15 @@ function displayRecipes(recipesData) {
   container.appendChild(cardContainer);
 }
 
-function displaySavedRecipes() {
-  var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+// function displaySavedRecipes() {
+//   var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
 
-  savedRecipes.forEach(function (savedRecipe) {
-    var card = document.createElement('div');
-    card.classList.add('card');
-    resultsList.appendChild(card);
-  });
-}
+//   savedRecipes.forEach(function (savedRecipe) {
+//     var card = document.createElement('div');
+//     card.classList.add('card');
+//     resultsList.appendChild(card);
+//   });
+// }
 
 function generatePlaceholderRecipes() {
   var placeholderRecipes = [
@@ -198,7 +199,7 @@ function generatePlaceholderRecipes() {
         "Warm flour tortillas for serving (optional)"
       ]
     },
-  
+
   ];
 
   return placeholderRecipes;
@@ -253,22 +254,22 @@ function displayPlaceholderRecipes() {
 }
 console.log(window.location.pathname)
 //when home page loads display placeholderRecipes
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname.includes('/index.html')) {
   window.addEventListener('load', displayPlaceholderRecipes);
-
 }
 
-window.addEventListener('DOMContentLoaded', function () {
-  console.log('this code ran')
-  var data = JSON.parse(localStorage.getItem('recipesData'));
-  displayRecipes(data.hits);
-  
-});
 
-if (window.location.pathname === '/Page2.html') {
-  window.addEventListener('load', displaySavedRecipes);
+// window.addEventListener('DOMContentLoaded', function () {
+//   console.log('this code ran')
+//   var data = JSON.parse(localStorage.getItem('recipesData'));
+//   displayRecipes(data.hits);
 
-}
+// });
+
+// if (window.location.pathname === '/Page2.html') {
+//   window.addEventListener('load', displaySavedRecipes);
+
+// }
 
 
 
@@ -284,32 +285,32 @@ if (window.location.pathname === '/Page2.html') {
 
 
 
-  $(".saveBtn").on("click", function () {
-    var parent = $(this).parent().parent()
-    var inputValue = parent.html()
-    var key = parent.attr("id");
-    localStorage.setItem(key, inputValue);
-    console.log(localStorage.getItem(key));
-  });
+$(".saveBtn").on("click", function () {
+  var parent = $(this).parent().parent()
+  var inputValue = parent.html()
+  var key = parent.attr("id");
+  localStorage.setItem(key, inputValue);
+  console.log(localStorage.getItem(key));
+});
 
-  $("textarea").each(function () {
-    var key = $(this).parent().attr("id");
-    var savedValue = localStorage.getItem(key);
-    if (savedValue) {
-      $(this).val(savedValue);
-    }
-  });
-
-
+$("textarea").each(function () {
+  var key = $(this).parent().attr("id");
+  var savedValue = localStorage.getItem(key);
+  if (savedValue) {
+    $(this).val(savedValue);
+  }
+});
 
 
-  
+
+
+
 
 function authenticate() {
   return gapi.auth2.getAuthInstance()
-      .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
-      .then(function() { console.log("Sign-in successful"); },
-            function(err) { console.error("Error signing in", err); });
+    .signIn({ scope: "https://www.googleapis.com/auth/youtube.readonly" })
+    .then(function () { console.log("Sign-in successful"); },
+      function (err) { console.error("Error signing in", err); });
 
 
 
@@ -319,29 +320,29 @@ function loadClient() {
   gapi.client.setApiKey("AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g");
   return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
 
-      .then(function() { console.log("GAPI client loaded for API"); },
-            function(err) { console.error("Error loading GAPI client for API", err); });
+    .then(function () { console.log("GAPI client loaded for API"); },
+      function (err) { console.error("Error loading GAPI client for API", err); });
 
 }
 // Make sure the client is loaded and sign-in is complete before calling this method.
 function execute() {
   return gapi.client.youtube.channels.list({})
 
-      .then(function(response) {
-              // Handle the results here (response.result has the parsed body).
-              console.log("Response", response);
-            },
-            function(err) { console.error("Execute error", err); });
+    .then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      console.log("Response", response);
+    },
+      function (err) { console.error("Execute error", err); });
 }
 
 
-fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchValue}&type=video&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g`)
+// fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchValue}&type=video&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g`)
 
-    .then(res =>{
-      return res.json();
-    })
-    .then(data=>{
-      data.items.forEach((curr)=>{
-        console.log(curr)
-      })
-    })
+//     .then(res =>{
+//       return res.json();
+//     })
+//     .then(data=>{
+//       data.items.forEach((curr)=>{
+//         console.log(curr)
+//       })
+//     })
