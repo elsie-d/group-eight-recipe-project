@@ -7,7 +7,7 @@ var searchTerm = urlParam.get('q')
 
 //APIs
 
-var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=cook${searchTerm}&type=video&key=AIzaSyDHy2YFq13_XxMv4LMm5N-nrwKkmPYtJ5g` //replace chicken w/ search token query
+var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q` //replace chicken w/ search token query
 var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096` // also replace chicken :) 
 
 //back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q
@@ -44,35 +44,35 @@ fetch(ytAPIURL)
         var card = document.createElement('div');
         card.classList.add('card')
         card.innerHTML = `
-        <div class="card card-styles">
-        <header class="card-header">
-        <p class="card-header-title">
-         ${items.snippet.title}
-        </p>
-        <button class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <iframe width="100%" height="auto"
-          src="https://www.youtube.com/embed/${items.id.videoId}}">
-          </iframe>
-          <br/><br/>
-                <p></p>
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item saveBtn">Save</a>
-        
-        
-      </footer>
+        <div class="column">
+            <div class="card  "> <!--- REMOVED CARD STYLES CLASS -->
+                <header class="card-header">
+                    <p class="card-header-title">
+                        ${items.snippet.title}
+                    </p>
+                    <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${items.id.videoId}">
+                        </iframe>
+                        <br /><br />
+                        <p></p>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item saveBtn">Save</a>
 
-      </div>
+                </footer>
+
+            </div>
+        </div>
         `  
-        document.getElementById('right').appendChild(card)
+        document.getElementById('videos').appendChild(card)
 
     })
     
