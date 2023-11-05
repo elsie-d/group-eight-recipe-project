@@ -2,339 +2,291 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Savory-Secrets</title>
+    <title>Savory-Secrets</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="./assets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Eater&family=Gabarito&family=Montserrat:wght@100&family=Roboto:wght@100&family=Yanone+Kaffeesatz:wght@200&display=swap"
-    rel="stylesheet">
-  <script src="https://kit.fontawesome.com/14b5cefaaf.js" crossorigin="anonymous"></script>
-  <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Eater&family=Gabarito&family=Montserrat:wght@100&family=Roboto:wght@100&family=Yanone+Kaffeesatz:wght@200&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14b5cefaaf.js" crossorigin="anonymous"></script>
+    <title>Document</title>
 
 </head>
 
 <body>
 
-  <!--Start of Navbar-->
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="#Savory-Secrets">
-        <i class="fa-solid fa-utensils"></i>
-        <h1 class="title is-3 has-text-weight-bold p-4">Savory-Secrets</h1>
-      </a>
+<header>
+    <nav id="nav-menu" id="navigation" class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="">
 
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+                <i class="fa-solid fa-utensils"></i>
+                <h1 class="title is-3 has-text-weight-bold p-4">Savory-Secrets</h1>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-disabled="true"></span>
+                <span aria-disabled="true"></span>
+                <span aria-disabled="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.html">
+                    Home
+                </a>
+
+                <a class="navbar-item" href="Page2.html?q=cookbreakfast">
+                    Breakfast
+                </a>
+                <a class="navbar-item" href="Page2.html?q=cooklunch">
+                    Lunch
+                </a>
+                <a class="navbar-item" href="Page2.html?q=cookdinner">
+                    Dinner
+                </a>
+            </div>
+            <form id="search-form">
+                <label id="input" for="search-query">Recipe Search:</label>
+                <input type="text" id="search-query" name="q" required>
+                <button id="search-button" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+
+
+    <main>
+
+        <!--EDAMAME-->
+         <h2 class="title is-2">DIY Recipes</h2>
+        <div class="columns is-desktop" id="ed-recipes">
+            <div class="column">
+                <div class="card"> <!--REMOVED -1 card-styles FROM CLASS-->
+                    <header class="card-header">
+                        <p class="card-header-title">Basic Turkey Gravy Recipe</p><button class="card-header-icon"
+                            aria-label="more options"><span class="icon"><i class="fas fa-angle-down"
+                                    aria-hidden="true"></i></span></button>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <ul class="content">
+                                <li>1/4 cup butter</li>
+                                <li>1/4 cup flour</li>
+                                <li>4 cups turkey drippings or turkey stock</li>
+                                <li>Kosher salt and freshly ground black pepper</li>
+                                <li>Kosher salt and freshly ground black pepper</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <footer class="card-footer"><a class="card-footer-item saveBtn" href="#">Save</a></footer>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card"> <!--REMOVED -1 card-styles FROM CLASS-->
+                    <header class="card-header">
+                        <p class="card-header-title">Basic Turkey Gravy Recipe</p><button class="card-header-icon"
+                            aria-label="more options"><span class="icon"><i class="fas fa-angle-down"
+                                    aria-hidden="true"></i></span></button>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <ul class="content">
+                                <li>1/4 cup butter</li>
+                                <li>1/4 cup flour</li>
+                                <li>4 cups turkey drippings or turkey stock</li>
+                                <li>Kosher salt and freshly ground black pepper</li>
+                                <li>Kosher salt and freshly ground black pepper</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <footer class="card-footer"><a class="card-footer-item saveBtn" href="#">Save</a></footer>
+                </div>
+            </div>
+            <div class="column"> <div class="card"> <!--REMOVED -1 card-styles FROM CLASS-->
+                <header class="card-header">
+                    <p class="card-header-title">Basic Turkey Gravy Recipe</p><button class="card-header-icon"
+                        aria-label="more options"><span class="icon"><i class="fas fa-angle-down"
+                                aria-hidden="true"></i></span></button>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <ul class="content">
+                            <li>1/4 cup butter</li>
+                            <li>1/4 cup flour</li>
+                            <li>4 cups turkey drippings or turkey stock</li>
+                            <li>Kosher salt and freshly ground black pepper</li>
+                            <li>Kosher salt and freshly ground black pepper</li>
+                        </ul>
+                    </div>
+                </div>
+                <footer class="card-footer"><a class="card-footer-item saveBtn" href="#">Save</a></footer>
+            </div></div>
+            <div class="column"> <div class="card"> <!--REMOVED -1 card-styles FROM CLASS-->
+                <header class="card-header">
+                    <p class="card-header-title">Basic Turkey Gravy Recipe</p><button class="card-header-icon"
+                        aria-label="more options"><span class="icon"><i class="fas fa-angle-down"
+                                aria-hidden="true"></i></span></button>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <ul class="content">
+                            <li>1/4 cup butter</li>
+                            <li>1/4 cup flour</li>
+                            <li>4 cups turkey drippings or turkey stock</li>
+                            <li>Kosher salt and freshly ground black pepper</li>
+                            <li>Kosher salt and freshly ground black pepper</li>
+                        </ul>
+                    </div>
+                </div>
+                <footer class="card-footer"><a class="card-footer-item saveBtn" href="#">Save</a></footer>
+            </div></div>
+        </div>
+
+   
+
+
+    <!--YOUTUBE-->
+    <h2 class="title is-2">Follow Along Recipes</h2>
+
+    <div class="columns is-desktop" id="videos">
+        <!--div class="column">
+            <div class="card ">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        TITLE
+                    </p>
+                    <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/zlLj4vT64QM">
+                        </iframe>
+                        <br /><br />
+                        <p></p>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item saveBtn">Save</a>
+
+                </footer>
+
+            </div>
+        </div>
+        <div class="column">
+            <div class="card ">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        TITLE
+                    </p>
+                    <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/zlLj4vT64QM">
+                        </iframe>
+                        <br /><br />
+                        <p></p>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item saveBtn">Save</a>
+
+                </footer>
+
+            </div>
+        </div>
+        <div class="column">
+            <div class="card ">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        TITLE
+                    </p>
+                    <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/zlLj4vT64QM">
+                        </iframe>
+                        <br /><br />
+                        <p></p>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item saveBtn">Save</a>
+
+                </footer>
+
+            </div>
+        </div>
+        <div class="column">
+            <div class="card  ">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        TITLE
+                    </p>
+                    <button class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/zlLj4vT64QM">
+                        </iframe>
+                        <br /><br />
+                        <p></p>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item saveBtn">Save</a>
+
+                </footer>
+
+            </div>
+        </div-->
     </div>
 
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="Index.html">Home</a>
-        <a class="navbar-item" href="Page2.html?q=cookbreakfast">Breakfast</a>
-        <a class="navbar-item" href="Page2.html?q=cooklunch">Lunch</a>
-        <a class="navbar-item" href="Page2.html?q=cookdinner">Dinner</a>
-      </div>
-    </div>
-  </nav>
-  <!--End of NavBar-->
-
-  <form id="search-form">
-    <!-- Form content -->
-  </form>
-  <div id="left"></div>
-  <div id="results"></div>
+    </main>
 
 
-  <div class="columns" id="columnsP2">
-    <!--Start Container 1 Recipes-->
 
-    
 
-    <!-- <div class="container-2" style="float: left;" id="left">
-      <h2 style="font-size: 24px; font-weight: bold;">Check out these recipes</h2>
-      <div class="card card-styles">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p></p>
-            <br>
-
-          </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
         </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
+    </footer>
 
-        </footer>
-      </div>
-      <div class="card card-styles">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p></p>
-            <br>
-
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
-
-        </footer>
-      </div>
-      <div class="card card-styles">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p></p>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
-
-        </footer>
-      </div>
-      <div class="card card-styles">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p></p>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
-
-        </footer>
-      </div>
-      <div class="card card-styles">
-        <header class="card-header">
-          <p class="card-header-title">
-            Recipe's
-          </p>
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p></p>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item saveBtn">Save</a>
-          <a href="#" class="card-footer-item editBtn">Edit</a>
-
-        </footer>
-      </div>
-    </div>
-  -->
-
-    <!--End Container 1 Recipes-->
-    <!--Start Container 2 Videos-->
-
-
-<div class="container-2" style="float: right;" id="right">
-  <!--h2 style="font-size: 24px; font-weight: bold;">Follow along!</h2>
-  <div class="card card-styles">
-
-  <header class="card-header">
-    <p class="card-header-title">
-      Recipe's  -- VIDEO TITLE --
-    </p>
-    <button class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </header>
-  <div class="card-content">
-    <div class="content">
-
-      <iframe width="100%" height="auto"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-<br/><br/>
-      <p></p>
-    </div>
-  </div>
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item saveBtn">Save</a>
-    
-    
-  </footer>
-  </div>
-  <div class="card card-styles">
-      <header class="card-header">
-        <p class="card-header-title">
-          -- VIDEO TITLE --
-        </p>
-        <button class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <iframe width="100%" height="auto"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-<br/><br/>
-      <p></p>
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item saveBtn">Save</a>
-        
-        
-      </footer>
-    </div>
-    <div class="card card-styles">
-      <header class="card-header">
-        <p class="card-header-title">
-          -- VIDEO TITLE --
-        </p>
-        <button class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <iframe width="100%" height="auto"
-          src="https://www.youtube.com/embed/tgbNymZ7vqY">
-          </iframe>
-          <br/><br/>
-                <p></p>
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item saveBtn">Save</a>
-    
-        
-      </footer>
-    </div>
-    <div class="card card-styles">
-      <header class="card-header">
-        <p class="card-header-title">
-          -- VIDEO TITLE --
-        </p>
-        <button class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <iframe width="100%" height="auto"
-          src="https://www.youtube.com/embed/tgbNymZ7vqY">
-          </iframe>
-          <br/><br/>
-                <p></p>
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item saveBtn">Save</a>
-        
-        
-      </footer>
-    </div>
-    <div class="card card-styles">
-      <header class="card-header">
-        <p class="card-header-title">
-          -- VIDEO TITLE --
-        </p>
-        <button class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-<br/><br/>
-      <p></p>
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item saveBtn">Save</a>
-        
-        
-      </footer>
-    </div-->
-</div>
-
-
-
-    <!--End Container 2 Videos-->
-  </div>
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </footer>
-
-<script src="./assets/display-search.js"></script>
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="./assets/display-search.js"></script>
 </body>
 
 </html>
