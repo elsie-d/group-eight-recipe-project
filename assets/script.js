@@ -11,7 +11,7 @@ searchForm.addEventListener('submit', async (event) => {
 
   var appId = 'f63380fe';
   var appKey = '90aaa4d2875a09ca3d7df6d0944c9096';
-  var url = `https://api.edamam.com/search?q=${searchValue}&app_id=${appId}&app_key=${appKey}&from=0&to=10`;
+  var url = `https://api.edamam.com/search?q=${searchValue}&app_id=${appId}&app_key=${appKey}&from=0&to=4`;
 
   try {
     var response = await fetch(url);
