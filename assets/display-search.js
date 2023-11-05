@@ -8,7 +8,7 @@ var searchTerm = urlParam.get('q')
 //APIs
 
 var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q` //replace chicken w/ search token query
-var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096` // also replace chicken :) 
+//var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096` // also replace chicken :) 
 
 //back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q
 
@@ -45,7 +45,7 @@ fetch(ytAPIURL)
         card.classList.add('card')
         card.innerHTML = `
         <div class="column">
-            <div class="card  "> <!--- REMOVED CARD STYLES CLASS -->
+            <div class="card  "> 
                 <header class="card-header">
                     <p class="card-header-title">
                         ${items.snippet.title}
@@ -104,7 +104,7 @@ searchForm.addEventListener('submit', async (event) => {
   var appId = 'f63380fe&'
   var appKey = '90aaa4d2875a09ca3d7df6d0944c9096'
 
-  var url = `https://api.edamam.com/search?q=${searchValue}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096&from=0&to=10`
+  var url = `https://api.edamam.com/search?q=${searchValue}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096&from=0&to=4`
   try { 
     var response = await fetch(url);
     if (!response.ok) {
@@ -119,22 +119,26 @@ searchForm.addEventListener('submit', async (event) => {
 });  
 
 function displayRecipes(hits) {
-  var container = document.getElementById('left');
-  var cardContainer = document.createElement('div');
-  cardContainer.classList.add('container-2');
+  var container = document.getElementById('ed-recipes');
+  
+  //var cardContainer = document.createElement('div');
+  //cardContainer.classList.add('container-2');
 
   var heading = document.createElement('h2');
-  heading.style.fontSize = '24px';
-  heading.style.fontWeight = 'bold';
-  heading.textContent = 'Check out these recipes';
+ // heading.style.fontSize = '24px';
+  //heading.style.fontWeight = 'bold';
+  //heading.textContent = 'Check out these recipes';
 
-  cardContainer.appendChild(heading);
+  //cardContainer.appendChild(heading);
 
   hits.forEach((hit) => {
     var recipe = hit.recipe;
 
+    var cardCol = document.createElement('div')
+    cardCol.classList.add('column')
+
     var card = document.createElement('div');
-    card.classList.add('card-1', 'card-styles');
+    card.classList.add('card');
 
     var header = document.createElement('header');
     header.classList.add('card-header');
@@ -191,33 +195,37 @@ function displayRecipes(hits) {
     card.appendChild(header);
     card.appendChild(content);
     card.appendChild(footer);
+    container.appendChild(cardCol);
+    cardCol.appendChild(card)
 
-    cardContainer.appendChild(card);
+   // cardContainer.appendChild(card);
   });
 
-  container.appendChild(cardContainer);
+ // container.appendChild(cardContainer);
+ //container.appendChild(cardCol);
+ //cardCol.appendChild(card)
 }
 
 
 
-// function displaySavedRecipes() {
-//   var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+ function displaySavedRecipes() {
+   var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
 
-//   savedRecipes.forEach(function (savedRecipe) {
-//     var card = document.createElement('div');
-//     card.classList.add('card');
-//     resultsList.appendChild(card);
-//   });
-// }
+   savedRecipes.forEach(function (savedRecipe) {
+    var card = document.createElement('div');
+    card.classList.add('card');
+     resultsList.appendChild(card);
+   });
+ }
 
-// window.addEventListener('DOMContentLoaded', function () {
-//   console.log('this code ran')
-//   var data = JSON.parse(localStorage.getItem('recipesData'));
-//   displayRecipes(data.hits);
+ window.addEventListener('DOMContentLoaded', function () {
+   console.log('this code ran')
+   var data = JSON.parse(localStorage.getItem('recipesData'));
+   displayRecipes(data.hits);
   
-// });
+ });
 
-// if (window.location.pathname === '/Page2.html') {
-//   window.addEventListener('load', displaySavedRecipes);
+ if (window.location.pathname === '/Page2.html') {
+  window.addEventListener('load', displaySavedRecipes);
 
-// }
+ }
