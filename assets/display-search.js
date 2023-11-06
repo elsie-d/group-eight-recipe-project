@@ -118,24 +118,62 @@ searchForm.addEventListener('submit', async (event) => {
   }
 });  
 
+function loadRecipesFromLocalStorage() {
+  var savedRecipesString = localStorage.getItem('savedRecipes');
+  var savedRecipes = JSON.parse(savedRecipesString);
+
+  var container = document.getElementById('loaded-recipes');
+  container.innerHTML = ''; // Clear the container before rendering
+
+  if (savedRecipes) {
+    savedRecipes.forEach((savedRecipe) => {
+      var card = document.createElement('div');
+      card.classList.add('card');
+
+      var header = document.createElement('header');
+      header.classList.add('card-header');
+
+      var headerTitle = document.createElement('p');
+      headerTitle.classList.add('card-header-title');
+      headerTitle.textContent = savedRecipe.label;
+
+      var content = document.createElement('div');
+      content.classList.add('card-content');
+
+      var innerContent = document.createElement('div');
+      innerContent.classList.add('content');
+
+      var ingredients = document.createElement('ul');
+      ingredients.classList.add('content');
+
+      savedRecipe.ingredients.forEach((ingredient) => {
+        var li = document.createElement('li');
+        li.textContent = ingredient;
+        ingredients.appendChild(li);
+      });
+
+      innerContent.appendChild(ingredients);
+      content.appendChild(innerContent);
+
+      card.appendChild(header);
+      card.appendChild(content);
+
+      container.appendChild(card);
+    });
+  }
+}
+
 function displayRecipes(hits) {
   var container = document.getElementById('ed-recipes');
-  
-  //var cardContainer = document.createElement('div');
-  //cardContainer.classList.add('container-2');
-
   var heading = document.createElement('h2');
- // heading.style.fontSize = '24px';
-  //heading.style.fontWeight = 'bold';
-  //heading.textContent = 'Check out these recipes';
 
-  //cardContainer.appendChild(heading);
+  container.innerHTML = ''; // Clear the container before rendering
 
   hits.forEach((hit) => {
     var recipe = hit.recipe;
 
-    var cardCol = document.createElement('div')
-    cardCol.classList.add('column')
+    var cardCol = document.createElement('div');
+    cardCol.classList.add('column');
 
     var card = document.createElement('div');
     card.classList.add('card');
@@ -195,17 +233,50 @@ function displayRecipes(hits) {
     card.appendChild(header);
     card.appendChild(content);
     card.appendChild(footer);
+
     container.appendChild(cardCol);
-    cardCol.appendChild(card)
+    cardCol.appendChild(card);
 
-   // cardContainer.appendChild(card);
+    saveBtn.addEventListener('click', function() {
+      saveRecipesToLocalStorage([hit]);
+      loadRecipesFromLocalStorage(); // Render the saved information
+    });
   });
-
- // container.appendChild(cardContainer);
- //container.appendChild(cardCol);
- //cardCol.appendChild(card)
 }
 
+function saveRecipesToLocalStorage(hits) {
+  var savedRecipesString = localStorage.getItem('savedRecipes');
+  var savedRecipes = savedRecipesString ? JSON.parse(savedRecipesString) : [];
+
+  var recipe = hits[0].recipe;
+
+  var savedRecipe = {
+    label: recipe.label,
+    ingredients: recipe.ingredients.map(ingredient => ingredient.text)
+  };
+
+  savedRecipes.push(savedRecipe);
+
+  localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+}
+
+// Load the saved recipes when the page loads
+window.addEventListener('load', function() {
+  loadRecipesFromLocalStorage();
+});
+
+// Adjust the number of card columns to 4
+function adjustCardColumns() {
+  var container = document.getElementById('loaded-recipes');
+  var cards = container.getElementsByClassName('card');
+
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].classList.add('column');
+  }
+}
+
+// Call the adjustCardColumns function after loading the saved recipes
+adjustCardColumns();
 
 
  function displaySavedRecipes() {
