@@ -1,23 +1,28 @@
 # Savory Secrets Website
-Hungry and don't want to eat out? Check out our page for inspiration. 
+Hungry and don't want to eat out? Search recipes on our page for inspiration. 
+
+![Savory Secretes](/assets/Screenshot%202023-11-06%20004951.png)
+
 
 ## Project description 
-We will generate an app that when users come our page they will see cards for each of our favorite recipes 4 cards and 1 card for randomized recipes.
-Then we can have each card link to a youtube video for the recipe and a recipe page from pinterest to give each recipe ideas
+As a team we generated an app that when users come our page they get an intro as well as see cards for each of our favorite recipes 4 cards in the intro page.
+The user then has the option to search recipes usin keywords in the search form at the top. Results will display on page 2 with the option to read recipes or follow along with a youtube video.
+The user also has the option to save up to four recipes at a time that will save on screen for them.
+
 
 ## User Story
-As a hungry person i want look recipes i like and others in the coding class may like
-- I want cards to show pre defined recipes 1 of each for each person in project
 
-As a user i want to be able to click on each card
-- Each card shows me recipes from pinterest and a youtube video showing instructions
+As a person that has the need to cook, I want to find inspiration by both writen recipes and videos all in one place. 
+As an inspired cook, I want to bea able to search and save recipes on my window.
 
-As a users i want to be able to have a recipe collection log
-- can save the knowledge i learned from my video and recipe that will print to local memory.
 
-As a user i want to see a friendly recipe website that looks like it serves my purpose of finding a place that could potentially have good food recipes
-Placing images and having a ui that cators to food and recipes pics of food and meals
 
 ## APIs
-- Recipe 
+- Edamame 
 - Youtube 
+
+Contributers:
+
+[BennyBlanco88](https://github.com/BennyBlanco88) , [Davidnino21](https://github.com/Davidnino21), [bybymaxy](bybymaxy), [
+elsie-d](https://github.com/elsie-d)
+
