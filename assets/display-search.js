@@ -17,6 +17,7 @@ var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxRe
 window.addEventListener("load", (event) => {
     event.preventDefault();
     videosLoad();
+    edamamLoad();
 
     console.log("page is fully loaded");
 
@@ -95,7 +96,22 @@ var resultsList = document.querySelector('#results');
 var searchButton = document.querySelector('.search-btn');
 var saveBtn = document.createElement('button');
 
-searchForm.addEventListener('submit', async (event) => {
+var edUrl = `https://api.edamam.com/search?q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096&from=0&to=4`
+function edamamLoad() {
+  fetch(edUrl)
+  .then (function (response){
+      return response.json();
+  }) 
+  
+  // GET DATA
+  .then(function (data){
+    displayRecipes(data.hits)})
+  }
+
+
+
+
+/* searchForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   var searchValue = searchInput.value.trim();
@@ -116,7 +132,7 @@ searchForm.addEventListener('submit', async (event) => {
     console.error('Error:', error);
 
   }
-});  
+});  */ 
 
 function loadRecipesFromLocalStorage() {
   var savedRecipesString = localStorage.getItem('savedRecipes');
