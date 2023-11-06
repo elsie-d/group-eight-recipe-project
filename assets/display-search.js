@@ -7,10 +7,10 @@ var searchTerm = urlParam.get('q')
 
 //APIs
 
-var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q` //replace chicken w/ search token query
+var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI` //replace chicken w/ search token query
 //var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096` // also replace chicken :) 
 
-//back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q
+//back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q      ---AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI
 
 // EVENT LISTENER    <--- on load for now, until we connect functionality from index 
 
@@ -300,3 +300,25 @@ adjustCardColumns();
   window.addEventListener('load', displaySavedRecipes);
 
  }
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});
