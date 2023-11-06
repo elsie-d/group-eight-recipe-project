@@ -15,10 +15,10 @@ var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxRe
 // EVENT LISTENER    <--- on load for now, until we connect functionality from index 
 
 window.addEventListener("load", (event) => {
-    event.preventDefault();
-    videosLoad();
+   event.preventDefault();
+   
     edamamLoad();
-
+    videosLoad();
     console.log("page is fully loaded");
 
 
@@ -59,7 +59,7 @@ fetch(ytAPIURL)
                 </header>
                 <div class="card-content">
                     <div class="content">
-                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${items.id.videoId}">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${items.id.videoId}"   allowfullscreen="allowfullscreen">
                         </iframe>
                         <br /><br />
                         <p></p>
@@ -79,14 +79,7 @@ fetch(ytAPIURL)
     
 })}
 
-// FETCH EDAMAM
-//fetch(foodAPIurl)
-//.then (function (response){
-////    return response.json();
-//}) 
-//.then(function (data){
-//    console.log(data);
-//})
+
 
 // alberts edamam funcionality
 
@@ -99,6 +92,7 @@ var saveBtn = document.createElement('button');
 var edUrl = `https://api.edamam.com/search?q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096&from=0&to=4`
 function edamamLoad() {
   fetch(edUrl)
+
   .then (function (response){
       return response.json();
   }) 
