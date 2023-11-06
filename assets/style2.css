@@ -1,8 +1,73 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-/* body {
-    background-color: #00d1b2;
-} */
+#search-form,
+main,
+footer,
+header {
+    font-family: 'Eater', serif;
+    font-family: 'Gabarito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+
+#navigation {
+    background-color: #EFE2CD;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    min-height: 120px;
+}
+
+#navbarBasicExample {
+    padding: 5px;
+    align-items: center;
+}
+
+#diy-title{
+    color: white;
+}
+
+#follow-title{
+    color: white;
+    padding: 50px;
+}
+
+a {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#search-form {
+    color: black;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 400px;
+}
+
+#input {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 1%;
+    margin-left: 10px;
+
+}
+
+#search-button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+
+}
+
 
 #search-form,
 .card-content,
@@ -63,28 +128,7 @@ a {
    width: 100%;
 } 
 
-/* .container-1 {
-    position: relative;
-    height: fit-content;
-    width: 100%;
-} */
 
-
-/*.intro {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 65%;
-    /* opacity: 0; }
-*/
-
-/*
-.intro-content {
-    opacity: 0.8;
-    width: 50%;
-    height: fit-content;
-} */
 
 .title {
     text-align: center;
