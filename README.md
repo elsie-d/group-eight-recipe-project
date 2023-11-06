@@ -21,7 +21,7 @@ As an inspired cook, I want to bea able to search and save recipes on my window.
 - Edamame 
 - Youtube 
 
-Contributers:
+***Contributors:***
 
 [BennyBlanco88](https://github.com/BennyBlanco88) , [Davidnino21](https://github.com/Davidnino21), [bybymaxy](bybymaxy), [
 elsie-d](https://github.com/elsie-d)
