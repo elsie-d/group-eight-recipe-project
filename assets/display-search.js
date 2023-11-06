@@ -7,10 +7,10 @@ var searchTerm = urlParam.get('q')
 
 //APIs
 
-var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI` //replace chicken w/ search token query
+var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyDYyNNGAC_vcZDPsWFnBAZeA0UwH-CCucI` //replace chicken w/ search token query
 //var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096` // also replace chicken :) 
 
-//back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q      ---AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI
+//back up YT API Key -->1) AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q     2) ---AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI 3)AIzaSyDYyNNGAC_vcZDPsWFnBAZeA0UwH-CCucI   4)AIzaSyBKk5pC8fs4f-Rm5zZcXt4o7PEr3Nn1dys
 
 // EVENT LISTENER    <--- on load for now, until we connect functionality from index 
 
