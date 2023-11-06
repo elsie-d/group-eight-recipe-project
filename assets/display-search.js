@@ -7,10 +7,10 @@ var searchTerm = urlParam.get('q')
 
 //APIs
 
-var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q` //replace chicken w/ search token query
+var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI` //replace chicken w/ search token query
 //var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096` // also replace chicken :) 
 
-//back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q
+//back up YT API Key --> AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q      ---AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI
 
 // EVENT LISTENER    <--- on load for now, until we connect functionality from index 
 
@@ -118,24 +118,62 @@ searchForm.addEventListener('submit', async (event) => {
   }
 });  
 
+function loadRecipesFromLocalStorage() {
+  var savedRecipesString = localStorage.getItem('savedRecipes');
+  var savedRecipes = JSON.parse(savedRecipesString);
+
+  var container = document.getElementById('loaded-recipes');
+  container.innerHTML = ''; // Clear the container before rendering
+
+  if (savedRecipes) {
+    savedRecipes.forEach((savedRecipe) => {
+      var card = document.createElement('div');
+      card.classList.add('card');
+
+      var header = document.createElement('header');
+      header.classList.add('card-header');
+
+      var headerTitle = document.createElement('p');
+      headerTitle.classList.add('card-header-title');
+      headerTitle.textContent = savedRecipe.label;
+
+      var content = document.createElement('div');
+      content.classList.add('card-content');
+
+      var innerContent = document.createElement('div');
+      innerContent.classList.add('content');
+
+      var ingredients = document.createElement('ul');
+      ingredients.classList.add('content');
+
+      savedRecipe.ingredients.forEach((ingredient) => {
+        var li = document.createElement('li');
+        li.textContent = ingredient;
+        ingredients.appendChild(li);
+      });
+
+      innerContent.appendChild(ingredients);
+      content.appendChild(innerContent);
+
+      card.appendChild(header);
+      card.appendChild(content);
+
+      container.appendChild(card);
+    });
+  }
+}
+
 function displayRecipes(hits) {
   var container = document.getElementById('ed-recipes');
-  
-  //var cardContainer = document.createElement('div');
-  //cardContainer.classList.add('container-2');
-
   var heading = document.createElement('h2');
- // heading.style.fontSize = '24px';
-  //heading.style.fontWeight = 'bold';
-  //heading.textContent = 'Check out these recipes';
 
-  //cardContainer.appendChild(heading);
+  container.innerHTML = ''; // Clear the container before rendering
 
   hits.forEach((hit) => {
     var recipe = hit.recipe;
 
-    var cardCol = document.createElement('div')
-    cardCol.classList.add('column')
+    var cardCol = document.createElement('div');
+    cardCol.classList.add('column');
 
     var card = document.createElement('div');
     card.classList.add('card');
@@ -195,17 +233,50 @@ function displayRecipes(hits) {
     card.appendChild(header);
     card.appendChild(content);
     card.appendChild(footer);
+
     container.appendChild(cardCol);
-    cardCol.appendChild(card)
+    cardCol.appendChild(card);
 
-   // cardContainer.appendChild(card);
+    saveBtn.addEventListener('click', function() {
+      saveRecipesToLocalStorage([hit]);
+      loadRecipesFromLocalStorage(); // Render the saved information
+    });
   });
-
- // container.appendChild(cardContainer);
- //container.appendChild(cardCol);
- //cardCol.appendChild(card)
 }
 
+function saveRecipesToLocalStorage(hits) {
+  var savedRecipesString = localStorage.getItem('savedRecipes');
+  var savedRecipes = savedRecipesString ? JSON.parse(savedRecipesString) : [];
+
+  var recipe = hits[0].recipe;
+
+  var savedRecipe = {
+    label: recipe.label,
+    ingredients: recipe.ingredients.map(ingredient => ingredient.text)
+  };
+
+  savedRecipes.push(savedRecipe);
+
+  localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+}
+
+// Load the saved recipes when the page loads
+window.addEventListener('load', function() {
+  loadRecipesFromLocalStorage();
+});
+
+// Adjust the number of card columns to 4
+function adjustCardColumns() {
+  var container = document.getElementById('loaded-recipes');
+  var cards = container.getElementsByClassName('card');
+
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].classList.add('column');
+  }
+}
+
+// Call the adjustCardColumns function after loading the saved recipes
+adjustCardColumns();
 
 
  function displaySavedRecipes() {
@@ -229,3 +300,25 @@ function displayRecipes(hits) {
   window.addEventListener('load', displaySavedRecipes);
 
  }
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});
