@@ -7,15 +7,15 @@ var searchTerm = urlParam.get('q')
 
 //APIs
 
-var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyDYyNNGAC_vcZDPsWFnBAZeA0UwH-CCucI` //replace chicken w/ search token query
-//var  foodAPIurl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096` // also replace chicken :) 
+var ytAPIURL =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=cook${searchTerm}&type=video&key=AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI` 
+
 
 //back up YT API Key -->1) AIzaSyCmemNtsJzdm23Gvqln6QInMVz45a0oQ_Q     2) ---AIzaSyDV2KFS-UBjCpIsSV30L20bxzQbs8tr5WI 3)AIzaSyDYyNNGAC_vcZDPsWFnBAZeA0UwH-CCucI   4)AIzaSyBKk5pC8fs4f-Rm5zZcXt4o7PEr3Nn1dys
 
-// EVENT LISTENER    <--- on load for now, until we connect functionality from index 
+// EVENT LISTENER -- PULL RECIPIES BASED ON QUERY
 
 window.addEventListener("load", (event) => {
-   event.preventDefault();
+  // event.preventDefault();
    
     edamamLoad();
     videosLoad();
@@ -105,28 +105,17 @@ function edamamLoad() {
 
 
 
-/* searchForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
 
-  var searchValue = searchInput.value.trim();
-  if (searchValue === '') return;
 
-  var appId = 'f63380fe&'
-  var appKey = '90aaa4d2875a09ca3d7df6d0944c9096'
 
-  var url = `https://api.edamam.com/search?q=${searchValue}&app_id=f63380fe&app_key=90aaa4d2875a09ca3d7df6d0944c9096&from=0&to=4`
-  try { 
-    var response = await fetch(url);
-    if (!response.ok) {
-      throw new Error('API responded with an error:', response.status);
-    }
-    var data = await response.json();
-      displayRecipes(data.hits)
-  } catch (error) { 
-    console.error('Error:', error);
 
-  }
-});  */ 
+
+
+
+
+
+
+
 
 function loadRecipesFromLocalStorage() {
   var savedRecipesString = localStorage.getItem('savedRecipes');
@@ -332,3 +321,7 @@ adjustCardColumns();
   });
 
 });
+
+
+
+
