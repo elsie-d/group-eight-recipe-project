@@ -66,7 +66,7 @@ fetch(ytAPIURL)
                     </div>
                 </div>
                 <footer class="card-footer">
-                    <a href="#" class="card-footer-item saveBtn">Save</a>
+                <a href="https://www.youtube.com/watch?v=${items.id.videoId}" class="card-footer-item saveBtn">Watch on YouTube</a>
 
                 </footer>
 
